@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 
 import static com.deliveroo.renuka.exceptions.CronException.ErrorCode.*;
 import static com.deliveroo.renuka.parsers.FieldType.CRON_EXPRESSION;
+import static com.deliveroo.renuka.parsers.TokenParser.exceptions;
 import static com.deliveroo.renuka.utils.Numbers.getRange;
 import static com.deliveroo.renuka.utils.Numbers.isNumber;
 
@@ -19,7 +20,6 @@ public class CronTokenizerAndParser {
     protected String cronExpression = "";
     protected CronData cronData;
     protected CronData expandedCronData;
-    protected List<CronException> exceptions = new ArrayList<>();
 
     public CronData tokenizeExpression() throws CronException {
         if (cronExpression == null) throw new CronException(CRON_EXPRESSION, NULL_INPUT);
@@ -38,7 +38,7 @@ public class CronTokenizerAndParser {
     }
 
     public CronData parseExpression() throws CronException {
-        String minutesDescription = new MinutesParser(cronData.getMinutes()).parse();
+        String minutesDescription = new MinutesParser(cronData.getMinutes()).parseAndHandle();
         String hourDescription = new HoursParser(cronData.getHours()).parse();
         String dayOfMonthDescription = new DayOfMonthParser(cronData.getDayOfMonth()).parse();
         String monthDescription = new MonthParser(cronData.getMonth()).parse();
@@ -59,28 +59,21 @@ public class CronTokenizerAndParser {
         }
     }
 
-    String parseAndHandle(FieldType fieldType, String token) {
-        try {
-            return parse(fieldType, token);
-        } catch (CronException cronException) {
-            exceptions.add(cronException);
-        }
-        return "";
-    }
 
-    String parse(FieldType fieldType, String token) throws CronException{
-        if (token.equals("*")) {
-            return parseStarExp(fieldType);
-        } else if (token.contains("-")) {
-            return parseRangeExp(fieldType, token);
-        } else if (token.contains(",")) {
-            return parseListExp(fieldType, token);
-        } else if (token.contains("*/")) {
-            return parseSlashStarExp(fieldType, token);
-        } else {
-            return parseNumber(fieldType, token);
-        }
-    }
+
+//    String parse(FieldType fieldType, String token) throws CronException{
+//        if (token.equals("*")) {
+//            return parseStarExp(fieldType);
+//        } else if (token.contains("-")) {
+//            return parseRangeExp(fieldType, token);
+//        } else if (token.contains(",")) {
+//            return parseListExp(fieldType, token);
+//        } else if (token.contains("*/")) {
+//            return parseSlashStarExp(fieldType, token);
+//        } else {
+//            return parseNumber(fieldType, token);
+//        }
+//    }
 
     private String parseSlashStarExp(FieldType fieldType, String token) throws CronException {
         StringBuilder builder = new StringBuilder();

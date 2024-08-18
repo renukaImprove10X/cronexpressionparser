@@ -1,9 +1,11 @@
-package com.deliveroo.renuka;
+package com.deliveroo.renuka.matchers;
 
 import com.deliveroo.renuka.exceptions.CronException;
 import com.deliveroo.renuka.parsers.FieldType;
 
 import java.util.Map;
+
+import static com.deliveroo.renuka.exceptions.CronException.ErrorCode.INVALID_RANGE;
 
 public abstract class Regex {
     private final FieldType fieldType;
@@ -29,7 +31,7 @@ public abstract class Regex {
         }
     }
 
-    public abstract Map<FieldType, Rules> getFieldRules();
-
     public abstract String parse() throws CronException;
+
+    public abstract Map<FieldType, Rules> getFieldRules();
 }

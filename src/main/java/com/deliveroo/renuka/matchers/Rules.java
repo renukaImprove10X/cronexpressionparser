@@ -1,4 +1,4 @@
-package com.deliveroo.renuka;
+package com.deliveroo.renuka.matchers;
 
 import com.deliveroo.renuka.exceptions.CronException;
 import com.deliveroo.renuka.parsers.FieldType;
