@@ -1,13 +1,17 @@
 package com.deliveroo.renuka;
 
-import com.deliveroo.renuka.exceptions.*;
+import com.deliveroo.renuka.exceptions.CronException;
 import com.deliveroo.renuka.models.CronData;
+import com.deliveroo.renuka.parsers.*;
 import com.deliveroo.renuka.utils.Numbers;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import static com.deliveroo.renuka.exceptions.CronException.ErrorCode.*;
+import static com.deliveroo.renuka.parsers.FieldType.CRON_EXPRESSION;
 import static com.deliveroo.renuka.utils.Numbers.getRange;
 import static com.deliveroo.renuka.utils.Numbers.isNumber;
 
@@ -18,10 +22,10 @@ public class CronTokenizerAndParser {
     protected List<CronException> exceptions = new ArrayList<>();
 
     public CronData tokenizeExpression() throws CronException {
-        if (cronExpression == null) throw new CronException(NULL_INPUT);
-        if (cronExpression.isBlank()) throw new CronException(EMPTY_INPUT);
+        if (cronExpression == null) throw new CronException(CRON_EXPRESSION, NULL_INPUT);
+        if (cronExpression.isBlank()) throw new CronException(CRON_EXPRESSION, EMPTY_INPUT);
         String[] tokens = cronExpression.trim().split("\\s", 6);
-        if (tokens.length < 6) throw new CronException(INSUFFICIENT_PARAMS);
+        if (tokens.length < 6) throw new CronException(CRON_EXPRESSION, INSUFFICIENT_PARAMS);
         cronData = new CronData(
                 tokens[0],
                 tokens[1],
@@ -34,11 +38,11 @@ public class CronTokenizerAndParser {
     }
 
     public CronData parseExpression() throws CronException {
-        String minutesDescription = parseAndHandle(FieldType.MINUTE, cronData.getMinutes());
-        String hourDescription = parseAndHandle(FieldType.HOUR, cronData.getHours());
-        String dayOfMonthDescription = parseAndHandle(FieldType.DAY_OF_MONTH, cronData.getDayOfMonth());
-        String monthDescription = parseAndHandle(FieldType.MONTH, cronData.getMonth());
-        String dayOfWeekDescription = parseAndHandle(FieldType.DAY_OF_WEEK, cronData.getDayOfWeek());
+        String minutesDescription = new MinutesParser(cronData.getMinutes()).parse();
+        String hourDescription = new HoursParser(cronData.getHours()).parse();
+        String dayOfMonthDescription = new DayOfMonthParser(cronData.getDayOfMonth()).parse();
+        String monthDescription = new MonthParser(cronData.getMonth()).parse();
+        String dayOfWeekDescription = new DayOfWeekParser(cronData.getDayOfWeek()).parse();
         expandedCronData = new CronData(minutesDescription, hourDescription, dayOfMonthDescription, monthDescription, dayOfWeekDescription, cronData.getCommand());
         handleExceptions();
         return expandedCronData;
@@ -78,12 +82,12 @@ public class CronTokenizerAndParser {
         }
     }
 
-    private String parseSlashStarExp(FieldType fieldType, String token) throws InvalidStepException {
+    private String parseSlashStarExp(FieldType fieldType, String token) throws CronException {
         StringBuilder builder = new StringBuilder();
         int step = Integer.parseInt(token.split("\\*/")[1]);
         Map.Entry<Integer, Integer> range = getRange(fieldType);
         if (step <= range.getKey() || step > range.getValue()) {
-            throw new InvalidStepException(fieldType, InvalidStepException.ErrorCode.INVALID_STEP);
+            throw new CronException(fieldType, CronException.ErrorCode.INVALID_STEP);
         }
         for (int i = range.getKey(); i <= range.getValue(); i += step) {
             builder.append(i);
@@ -92,40 +96,40 @@ public class CronTokenizerAndParser {
         return builder.toString().trim();
     }
 
-    private String parseListExp(FieldType fieldType, String token) throws InvalidListException {
+    private String parseListExp(FieldType fieldType, String token) throws CronException {
         Map.Entry<Integer, Integer> rangeMap = getRange(fieldType);
         String[] numbers = token.split(",");
         for (String number : numbers) {
             int numeric = Integer.parseInt(number);
             if (numeric < rangeMap.getKey() || numeric > rangeMap.getValue()) {
-                throw new InvalidListException(fieldType, InvalidListException.ErrorCode.RANGE_OUT_OF_BOUND);
+                throw new CronException(fieldType, CronException.ErrorCode.LIST_RANGE_OUT_OF_BOUND);
             }
         }
         return token.replace(",", " ");
     }
 
-    private String parseNumber(FieldType fieldType, String token) throws InvalidNumberException {
+    private String parseNumber(FieldType fieldType, String token) throws CronException {
         Map.Entry<Integer, Integer> rangeMap = getRange(fieldType);
         int number = Integer.parseInt(token);
         if (number < rangeMap.getKey() || number > rangeMap.getValue()) {
-            throw new InvalidNumberException(fieldType, InvalidNumberException.ErrorCode.INVALID_NUMBER);
+            throw new CronException(fieldType, CronException.ErrorCode.INVALID_NUMBER);
         }
         return token.trim();
     }
 
-    private String parseRangeExp(FieldType fieldType, String token) throws InvalidRangeException {
+    private String parseRangeExp(FieldType fieldType, String token) throws CronException {
         StringBuilder builder = new StringBuilder();
         String[] interval = token.split("-");
         if (interval.length > 2)
-            throw new InvalidRangeException(fieldType, InvalidRangeException.ErrorCode.TOO_MANY_ARGS);
+            throw new CronException(fieldType, CronException.ErrorCode.TOO_MANY_ARGS);
         if(!isNumber(interval[0]) || !isNumber(interval[1])){
-            throw new InvalidRangeException(fieldType, InvalidRangeException.ErrorCode.INVALID_RANGE);
+            throw new CronException(fieldType, CronException.ErrorCode.INVALID_RANGE);
         }
         Map.Entry<Integer, Integer> range = getRange(fieldType);
         int startInterval = Integer.parseInt(interval[0]);
         int endInterval = Integer.parseInt(interval[1]);
         if (startInterval < range.getKey() || endInterval > range.getValue()) {
-            throw new InvalidRangeException(fieldType, InvalidRangeException.ErrorCode.INVALID_RANGE);
+            throw new CronException(fieldType, CronException.ErrorCode.INVALID_RANGE);
         }
         for (int i = startInterval; i <= endInterval; i++) {
             builder.append(i);

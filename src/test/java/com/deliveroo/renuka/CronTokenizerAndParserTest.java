@@ -1,14 +1,12 @@
 package com.deliveroo.renuka;
 
-import com.deliveroo.renuka.exceptions.*;
+import com.deliveroo.renuka.exceptions.CronException;
 import com.deliveroo.renuka.models.CronData;
+import com.deliveroo.renuka.parsers.FieldType;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -39,7 +37,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidExpression_whentokenizeExpression_thenThrowCronException() {
         tokenizeAndParse.cronExpression = "*/15 0 1,15 * 1-5 ";
         Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.tokenizeExpression());
-        assertEquals("Cron expression has missing fields", exception.getMessage());
+        assertEquals("CRON_EXPRESSION : Cron expression has missing fields", exception.getMessage());
     }
 
     @Test
@@ -145,17 +143,17 @@ class CronTokenizerAndParserTest {
     }
 
     @Test
-    void givenInvalidRangeExpression_whenParseMinutes_thenShouldThrowInvalidRangeException() {
+    void givenInvalidRangeExpression_whenParseMinutes_thenShouldThrowCronException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String minutesExpression = "50-70";
-        Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
+        Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
     }
 
     @Test
-    void givenTooManyRangesExpression_whenParseMinutes_thenShouldThrowInvalidRangeExceptionWithMessageTooManyRanges(){
+    void givenTooManyRangesExpression_whenParseMinutes_thenShouldThrowCronExceptionWithMessageTooManyRanges(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String minutesExpression = "50-70-80";
-        Exception exception = Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
         assertEquals("MINUTE : Multiple Ranges Detected", exception.getMessage());
     }
 
@@ -172,7 +170,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidListExpression_whenParseMinutes_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String minutesExpression = "20,50,80";
-        Exception exception = Assertions.assertThrows(InvalidListException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
         assertEquals("MINUTE : Invalid list range", exception.getMessage());
     }
 
@@ -189,7 +187,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStarSlashExpression_whenParseMinutes_thenShouldThrowInvalidTimerException(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String minutesExpression = "*/0";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MINUTE, minutesExpression));
         assertEquals("MINUTE : Invalid step", exception.getMessage());
     }
 
@@ -212,17 +210,17 @@ class CronTokenizerAndParserTest {
     }
 
     @Test
-    void givenInvalidRangeExpression_whenParseHours_thenShouldThrowInvalidRangeException(){
+    void givenInvalidRangeExpression_whenParseHours_thenShouldThrowCronException(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String hoursExpression = "10-24";
-        Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, hoursExpression));
+        Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, hoursExpression));
     }
 
     @Test
-    void givenTooManyRangesExpression_whenParseHours_thenShouldThrowInvalidRangeExceptionWithMessageTooManyRanges(){
+    void givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String hoursExpression = "50-70-80";
-        Exception exception = Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, hoursExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, hoursExpression));
         assertEquals("HOUR : Multiple Ranges Detected", exception.getMessage());
     }
 
@@ -240,7 +238,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidListExpression_whenParseHours_thenShouldThrowInvalidListExceptionWithMessageRangeOutOfBound(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String minutesExpression = "20,50,80";
-        Exception exception = Assertions.assertThrows(InvalidListException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, minutesExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, minutesExpression));
         assertEquals("HOUR : Invalid list range", exception.getMessage());
     }
 
@@ -257,7 +255,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStarSlashExpression_whenParseHours_thenShouldThrowInvalidException(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String hoursExpression = "*/0";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, hoursExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.HOUR, hoursExpression));
         assertEquals("HOUR : Invalid step", exception.getMessage());
     }
 
@@ -274,7 +272,7 @@ class CronTokenizerAndParserTest {
     void givenSingleValueExpression_whenParseDayOfMonth_thenReturnSpecificMinute(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfMonthExpression = "32";
-        Exception exception = Assertions.assertThrows(InvalidNumberException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
         assertEquals("DAY_OF_MONTH : Invalid number", exception.getMessage());
     }
 
@@ -291,15 +289,15 @@ class CronTokenizerAndParserTest {
     void givenMultipleRangeExpression_whenParseDayOfMonth_thenShouldThrowMultipleRangeException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfMonthExpression = "0-24-30";
-        Exception exception = Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
         assertEquals("DAY_OF_MONTH : Multiple Ranges Detected", exception.getMessage());
     }
 
     @Test
-    void givenInvalidRangeExpression_whenParseDayOfMonth_thenShouldThrowInvalidRangeException() {
+    void givenInvalidRangeExpression_whenParseDayOfMonth_thenShouldThrowCronException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfMonthExpression = "0-35";
-        Exception exception = Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
         assertEquals("DAY_OF_MONTH : Invalid range", exception.getMessage());
     }
 
@@ -313,10 +311,10 @@ class CronTokenizerAndParserTest {
     }
 
     @Test
-    void givenInvalidListExpression_whenParseDayOfMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange() throws InvalidRangeException {
+    void givenInvalidListExpression_whenParseDayOfMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange() throws CronException {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfMonthExpression = "1,15,30,40";
-        Exception exception = Assertions.assertThrows(InvalidListException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
         assertEquals("DAY_OF_MONTH : Invalid list range", exception.getMessage());
     }
 //
@@ -333,7 +331,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStarSlashExpression_whenParseDayOfMonth_thenShouldThrowInvalidStepException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfMonthExpression = "*/0";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_MONTH, dayOfMonthExpression));
         assertEquals("DAY_OF_MONTH : Invalid step", exception.getMessage());
     }
 
@@ -358,10 +356,10 @@ class CronTokenizerAndParserTest {
     }
 
     @Test
-    void givenInvalidRangeExpression_whenParseMonth_thenShouldThrowInvalidRangeException() {
+    void givenInvalidRangeExpression_whenParseMonth_thenShouldThrowCronException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String monthExpression = "0-15";
-        Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
+        Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
     }
 
     @Test
@@ -377,7 +375,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidListExpression_whenParseMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String monthExpression = "20,50,80";
-        Exception exception = Assertions.assertThrows(InvalidListException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
         assertEquals("MONTH : Invalid list range", exception.getMessage());
     }
 
@@ -394,7 +392,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStarSlashExpression_whenParseMonth_thenShouldThrowInvalidStepException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String monthExpression = "*/0";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
         assertEquals("MONTH : Invalid step", exception.getMessage());
     }
 
@@ -402,7 +400,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String monthExpression = "*/13";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.MONTH, monthExpression));
         assertEquals("MONTH : Invalid step", exception.getMessage());
     }
 
@@ -419,7 +417,7 @@ class CronTokenizerAndParserTest {
     @Test
     void givenSingleValueExpression_whenParseDayOfWeek_thenThrowsInvalidNumberException(){
         String dayOfWeekExpression = "0";
-        Exception exception = Assertions.assertThrows(InvalidNumberException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
         assertEquals("DAY_OF_WEEK : Invalid number", exception.getMessage());
     }
 
@@ -433,10 +431,10 @@ class CronTokenizerAndParserTest {
     }
 
     @Test
-    void givenInvalidRangeExpression_whenParseDayOfWeek_thenShouldThrowInvalidRangeException() {
+    void givenInvalidRangeExpression_whenParseDayOfWeek_thenShouldThrowCronException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfWeekExpression = "0-15";
-        Assertions.assertThrows(InvalidRangeException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
+        Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
     }
 
     @Test
@@ -452,7 +450,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidListExpression_whenParseDayOfWeek_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfWeekExpression = "2,5,8";
-        Exception exception = Assertions.assertThrows(InvalidListException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
         assertEquals("DAY_OF_WEEK : Invalid list range", exception.getMessage());
     }
 
@@ -469,7 +467,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStarSlashExpression_whenParseDayOfWeek_thenShouldThrowInvalidStepException() {
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfWeekExpression = "*/0";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
         assertEquals("DAY_OF_WEEK : Invalid step", exception.getMessage());
     }
 
@@ -477,7 +475,7 @@ class CronTokenizerAndParserTest {
     void givenInvalidStepExpression_whenParseDayOfWeek_thenReturnThrowInvalidStepException(){
         CronTokenizerAndParser tokenizeAndParse = new CronTokenizerAndParser();
         String dayOfWeekExpression = "*/8";
-        Exception exception = Assertions.assertThrows(InvalidStepException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
+        Exception exception = Assertions.assertThrows(CronException.class, () -> tokenizeAndParse.parse(FieldType.DAY_OF_WEEK, dayOfWeekExpression));
         assertEquals("DAY_OF_WEEK : Invalid step", exception.getMessage());
     }
 

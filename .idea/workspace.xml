@@ -4,26 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronExpressionParserDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/FieldType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidListException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidNumberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidRangeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidStepException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/models/CronData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/utils/Numbers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" afterDir="false" />
+    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="Initial architecture">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/RangeRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/Regex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/Rules.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/StarRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/DayOfMonthParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/DayOfWeekParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/HoursParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/MinutesParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/MonthParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/FieldType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidListException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidNumberException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidRangeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/InvalidStepException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/models/CronData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/models/CronData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/utils/Numbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/utils/Numbers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +100,7 @@
     "JUnit.TokenizeAndParseTest.tokenizeExpression.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
@@ -111,6 +114,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.deliveroo.renuka" />
       <recent name="com.deliveroo.renuka.exceptions" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -123,6 +127,7 @@
       <recent name="com.deliveroo.renuka" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.deliveroo.renuka.parsers" />
       <recent name="com.deliveroo.renuka.exceptions" />
       <recent name="com.deliveroo.renuka" />
     </key>
@@ -133,7 +138,7 @@
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
+          <option name="PATTERN" value="com.deliveroo.renuka.parsers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,7 +150,7 @@
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
+          <option name="PATTERN" value="com.deliveroo.renuka.parsers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -160,7 +165,7 @@
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
+          <option name="PATTERN" value="com.deliveroo.renuka.parsers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,7 +181,7 @@
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
+          <option name="PATTERN" value="com.deliveroo.renuka.parsers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -192,7 +197,7 @@
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
+          <option name="PATTERN" value="com.deliveroo.renuka.parsers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -223,19 +228,32 @@
       <option name="presentableId" value="Default" />
       <updated>1723630946831</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial architecture">
+      <option name="closed" value="true" />
+      <created>1724003254546</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1724003254546</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial architecture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java</url>
-          <line>107</line>
+          <line>109</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java</url>
-          <line>74</line>
+          <line>72</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

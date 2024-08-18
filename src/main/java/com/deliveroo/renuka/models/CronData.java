@@ -2,7 +2,7 @@ package com.deliveroo.renuka.models;
 
 import java.util.Objects;
 
-import static com.deliveroo.renuka.FieldType.*;
+import static com.deliveroo.renuka.parsers.FieldType.*;
 
 public class CronData{
     private String minutes;
