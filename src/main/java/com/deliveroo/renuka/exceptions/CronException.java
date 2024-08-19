@@ -21,7 +21,7 @@ public class CronException extends Exception{
         TOO_MANY_ARGS("Multiple Ranges Detected"),
         INVALID_STEP("Invalid step");
 
-        String message;
+        public String message;
 
         ErrorCode(String message) {
             this.message = message;

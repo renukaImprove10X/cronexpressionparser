@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/ListRegex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/OnCronExceptionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/RangeRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/RangeRegex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Rules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/StarRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StarRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/ListRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/ListRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/RangeRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/RangeRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StarRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StarRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/FieldType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/utils/Numbers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/utils/Numbers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +29,7 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -81,6 +83,7 @@
     "JUnit.CronTokenizerAndParserTest.givenStarSlashExpression_whenParseDayOfMonth_thenReturnSteppedDays.executor": "Run",
     "JUnit.CronTokenizerAndParserTest.givenStarSlashExpression_whenParseMinutes_thenReturnTimedMinutes.executor": "Run",
     "JUnit.CronTokenizerAndParserTest.givenStepExpression_whenParseDayOfWeek_thenReturnSteppedDays.executor": "Run",
+    "JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges.executor": "Run",
     "JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseMinutes_thenShouldThrowInvalidRangeExceptionWithMessageTooManyRanges.executor": "Run",
     "JUnit.CronTokenizerAndParserTest.parseExpression.executor": "Run",
     "JUnit.CronTokenizerAndParserTest.tokenizeExpression.executor": "Run",
@@ -131,7 +134,7 @@
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.parsers.*" />
+          <option name="PATTERN" value="com.deliveroo.renuka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,7 +157,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CronTokenizerAndParserTest.givenInvalidMinutesAndHours_whenParseExpression_thenThrowCumulativeExceptionMessages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CronExpressionParser" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.deliveroo.renuka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.deliveroo.renuka" />
+      <option name="MAIN_CLASS_NAME" value="com.deliveroo.renuka.CronTokenizerAndParserTest" />
+      <option name="METHOD_NAME" value="givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
@@ -164,13 +183,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.deliveroo.renuka" />
       <option name="MAIN_CLASS_NAME" value="com.deliveroo.renuka.CronTokenizerAndParserTest" />
-      <option name="METHOD_NAME" value="givenInvalidMinutesAndHours_whenParseExpression_thenThrowCumulativeExceptionMessages" />
+      <option name="METHOD_NAME" value="givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfWeek_thenReturnSpecificDay" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CronTokenizerAndParserTest.parseExpression" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CronExpressionParser" />
       <extension name="coverage">
         <pattern>
@@ -180,23 +199,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.deliveroo.renuka" />
       <option name="MAIN_CLASS_NAME" value="com.deliveroo.renuka.CronTokenizerAndParserTest" />
-      <option name="METHOD_NAME" value="givenSingleValueExpression_whenParseDayOfWeek_thenReturnSpecificDay" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CronTokenizerAndParserTest.givenStarExpression_whenParseMinutes_thenReturnAllMinutes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CronExpressionParser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.deliveroo.renuka" />
-      <option name="MAIN_CLASS_NAME" value="com.deliveroo.renuka.CronTokenizerAndParserTest" />
-      <option name="METHOD_NAME" value="givenStarExpression_whenParseMinutes_thenReturnAllMinutes" />
+      <option name="METHOD_NAME" value="parseExpression" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -205,10 +208,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CronTokenizerAndParserTest" />
-        <item itemvalue="JUnit.CronTokenizerAndParserTest.givenStarExpression_whenParseMinutes_thenReturnAllMinutes" />
-        <item itemvalue="JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfWeek_thenReturnSpecificDay" />
+        <item itemvalue="JUnit.CronTokenizerAndParserTest.parseExpression" />
         <item itemvalue="Application.CronExpressionParserDemo" />
-        <item itemvalue="JUnit.CronTokenizerAndParserTest.givenInvalidMinutesAndHours_whenParseExpression_thenThrowCumulativeExceptionMessages" />
+        <item itemvalue="JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges" />
+        <item itemvalue="JUnit.CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException" />
       </list>
     </recent_temporary>
   </component>
@@ -237,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724009514016</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactoring">
+      <option name="closed" value="true" />
+      <created>1724013903738</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1724013903738</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -249,33 +260,46 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java</url>
-          <line>104</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java</url>
-          <line>73</line>
+          <line>75</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java</url>
-          <line>83</line>
+          <line>85</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java</url>
+          <line>367</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/RangeRegex.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java</url>
-          <line>81</line>
+          <line>83</line>
           <properties class="com.deliveroo.renuka.CronTokenizerAndParserTest" method="givenStarExpression_whenParseMinutes_thenReturnAllMinutes">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

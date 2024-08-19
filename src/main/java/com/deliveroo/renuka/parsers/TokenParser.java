@@ -3,12 +3,8 @@ package com.deliveroo.renuka.parsers;
 import com.deliveroo.renuka.exceptions.CronException;
 import com.deliveroo.renuka.matchers.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public abstract class TokenParser {
     private final String token;
-    public static List<CronException> exceptions = new ArrayList<>();
 
     public TokenParser(String token) {
         this.token = token;
@@ -40,11 +36,11 @@ public abstract class TokenParser {
         return expression.parse();
     }
 
-    public String parseAndHandle() {
+    public String parseAndHandle(OnCronExceptionListener listener) {
         try {
             return parse();
         } catch (CronException cronException) {
-            exceptions.add(cronException);
+            listener.onException(cronException);
         }
         return "";
     }
@@ -52,4 +48,3 @@ public abstract class TokenParser {
     protected abstract FieldType getFieldType();
 
 }
-

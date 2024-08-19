@@ -5,8 +5,6 @@ import com.deliveroo.renuka.parsers.FieldType;
 
 import java.util.Map;
 
-import static com.deliveroo.renuka.exceptions.CronException.ErrorCode.INVALID_RANGE;
-
 public abstract class Regex {
     private final FieldType fieldType;
     private final String fieldToken;
@@ -27,7 +25,7 @@ public abstract class Regex {
     public void validate() throws CronException {
         Rules rules = getFieldRules().get(getFieldType());
         if (rules != null && !fieldToken.matches(rules.regex())) {
-            throw new CronException(rules.fieldType() + " " + rules.errorCode());
+            throw new CronException(rules.fieldType() + " : " + rules.errorCode().message);
         }
     }
 

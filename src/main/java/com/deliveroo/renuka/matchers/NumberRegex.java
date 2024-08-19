@@ -5,7 +5,7 @@ import com.deliveroo.renuka.parsers.FieldType;
 
 import java.util.Map;
 
-import static com.deliveroo.renuka.exceptions.CronException.ErrorCode.INVALID_RANGE;
+import static com.deliveroo.renuka.exceptions.CronException.ErrorCode.INVALID_NUMBER;
 
 public class NumberRegex extends Regex {
     public NumberRegex(String token, FieldType fieldType) {
@@ -28,11 +28,11 @@ public class NumberRegex extends Regex {
     @Override
     public Map<FieldType, Rules> getFieldRules() {
         return Map.of(
-                FieldType.MINUTE, new Rules("^(0?[0-9]|[1-5][0-9])-([0-5][0-9])$", FieldType.MINUTE, INVALID_RANGE),
-                FieldType.HOUR, new Rules("^(0?[0-9]|1[0-9]|2[0-3])-(0?[0-9]|1[0-9]|2[0-3])$", FieldType.HOUR, INVALID_RANGE),
-                FieldType.DAY_OF_MONTH, new Rules("^(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|[12][0-9]|3[0-1])$", FieldType.DAY_OF_MONTH, INVALID_RANGE),
-                FieldType.MONTH, new Rules("^(0?[1-9]|1[0-2])-(0?[1-9]|1[0-2])$", FieldType.MONTH, INVALID_RANGE),
-                FieldType.DAY_OF_WEEK, new Rules("^([1-7])-([1-7])$", FieldType.DAY_OF_WEEK, INVALID_RANGE)
+                FieldType.MINUTE, new Rules("^(?:[0-5]?\\d)$", FieldType.MINUTE, INVALID_NUMBER),
+                FieldType.HOUR, new Rules("^(?:[01]?\\d|2[0-3])$", FieldType.HOUR, INVALID_NUMBER),
+                FieldType.DAY_OF_MONTH, new Rules("^(?:0?[1-9]|[12]\\d|3[01])$", FieldType.DAY_OF_MONTH, INVALID_NUMBER),
+                FieldType.MONTH, new Rules("^(?:0?[1-9]|1[0-2])$", FieldType.MONTH, INVALID_NUMBER),
+                FieldType.DAY_OF_WEEK, new Rules("^[0-6]$", FieldType.DAY_OF_WEEK, INVALID_NUMBER)
         );
     }
 }
