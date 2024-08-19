@@ -1,0 +1,257 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.deliveroo.renuka.CronExpressionParserDemo",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_242327099 { 
+   	label=deliveroo
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_1587818073 { 
+   	label=renuka
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   CronData28592590[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CronData</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   command: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   dayOfMonth: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   dayOfWeek: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   hours: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   minutes: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   month: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ print()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CronException462381516[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CronException</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CronExpressionParserDemo1337828134[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CronExpressionParserDemo</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+CronTokenizerAndParser1337828134[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)CronTokenizerAndParser</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   cronData: CronData [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   cronExpression: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >+   exceptions: List&lt;CronException&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   expandedCronData: CronData [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># handleExceptions()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ parseExpression(): CronData</TD></TR>
+<TR><TD ALIGN="LEFT" >+ tokenizeExpression(): CronData</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DayOfMonthParser1388672364[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DayOfMonthParser</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DayOfWeekParser1388672364[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DayOfWeekParser</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+HoursParser1388672364[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)HoursParser</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MinutesParser1388672364[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MinutesParser</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MonthParser1388672364[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MonthParser</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+Regex791734455[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Regex</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   fieldToken: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   fieldType: FieldType [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ parse(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ validate()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+TokenParser1388672364[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)TokenParser</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   token: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># findMatchingRegex(): Regex</TD></TR>
+<TR><TD ALIGN="LEFT" >+ parse(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ parseAndHandle(listener: OnCronExceptionListener): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+CronExpressionParserDemo1337828134 -> CronData28592590[label="main() -> print()"];
+CronTokenizerAndParser1337828134 -> CronData28592590[label="cronData
+[0..1]"];
+CronTokenizerAndParser1337828134 -> CronData28592590[label="expandedCronData
+[0..1]"];
+CronTokenizerAndParser1337828134 -> CronException462381516[label="exceptions
+[0..*]"];
+TokenParser1388672364 -> DayOfMonthParser1388672364[arrowhead=none, arrowtail=empty, dir=both];
+TokenParser1388672364 -> DayOfWeekParser1388672364[arrowhead=none, arrowtail=empty, dir=both];
+TokenParser1388672364 -> HoursParser1388672364[arrowhead=none, arrowtail=empty, dir=both];
+TokenParser1388672364 -> MinutesParser1388672364[arrowhead=none, arrowtail=empty, dir=both];
+TokenParser1388672364 -> MonthParser1388672364[arrowhead=none, arrowtail=empty, dir=both];
+    
+}
+@enduml

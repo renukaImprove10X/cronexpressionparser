@@ -319,6 +319,14 @@ class CronTokenizerAndParserTest {
     }
 
     @Test
+    void givenInvalidSingleValueExpression_whenParseDOM_thenReturnSpecificMonth() {
+        String monthExpression = "36";
+        Exception exception = Assertions.assertThrows(CronException.class, () -> new DayOfMonthParser(monthExpression).parse());
+        assertEquals("DAY_OF_MONTH : Invalid number", exception.getMessage());
+
+    }
+
+    @Test
     void givenRangeExpression_whenParseMonth_thenReturnRangeOfMonths() throws CronException {
         String monthExpression = "3-5";
         String expectedOutput = "3 4 5";

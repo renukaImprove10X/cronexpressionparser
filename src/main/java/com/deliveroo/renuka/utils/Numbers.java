@@ -15,14 +15,6 @@ public class Numbers {
         return new AbstractMap.SimpleEntry<>(fieldType.start, fieldType.end);
     }
 
-    public static String getListAsString(int number) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = number; i <= number; i++) {
-            builder.append(i);
-        }
-        return builder.toString().trim();
-    }
-
     public static String getListAsString(int start, int end) {
         StringBuilder builder = new StringBuilder();
         for (int i = start; i <= end; i++) {
@@ -35,15 +27,6 @@ public class Numbers {
     public static String getListAsString(int start, int end, int step) {
         StringBuilder builder = new StringBuilder();
         for (int i = start; i <= end; i+=step) {
-            builder.append(i);
-            builder.append(" ");
-        }
-        return builder.toString().trim();
-    }
-
-    public static String getListString(FieldType fieldType) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = fieldType.start; i <= fieldType.end; i++) {
             builder.append(i);
             builder.append(" ");
         }
