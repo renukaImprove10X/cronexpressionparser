@@ -15,14 +15,7 @@ public class NumberRegex extends Regex {
     @Override
     public String parse() throws CronException {
         int number = Integer.parseInt(getFieldToken());
-        handleExceptions(number);
         return number+"".trim();
-    }
-
-    private void handleExceptions(int number) throws CronException {
-        if (number < getFieldType().start || number > getFieldType().end) {
-            throw new CronException(getFieldType(), CronException.ErrorCode.INVALID_NUMBER);
-        }
     }
 
     @Override

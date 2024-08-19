@@ -15,17 +15,7 @@ public class ListRegex extends Regex {
     @Override
     public String parse() throws CronException {
         String[] numbers = getFieldToken().split(",");
-        for (String number : numbers) {
-            int numeric = Integer.parseInt(number);
-            isNumberInValid(numeric);
-        }
         return getFieldToken().replace(",", " ");
-    }
-
-    private void isNumberInValid(int numeric) throws CronException {
-        if (numeric < getFieldType().start || numeric > getFieldType().end) {
-            throw new CronException(getFieldType(), CronException.ErrorCode.LIST_RANGE_OUT_OF_BOUND);
-        }
     }
 
     @Override

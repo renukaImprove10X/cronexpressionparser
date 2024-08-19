@@ -20,7 +20,6 @@ public class RangeRegex extends Regex {
         handleExceptions(interval);
         int startInterval = Integer.parseInt(interval[0]);
         int endInterval = Integer.parseInt(interval[1]);
-        checkForInValidRangeException(startInterval < getFieldType().start, endInterval > getFieldType().end);
         return Numbers.getListAsString(startInterval, endInterval);
     }
 

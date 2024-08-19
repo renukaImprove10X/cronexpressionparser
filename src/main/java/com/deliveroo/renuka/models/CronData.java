@@ -30,22 +30,22 @@ public class CronData{
                 Objects.equals(month, cronData.month) && Objects.equals(dayOfWeek, cronData.dayOfWeek) && Objects.equals(command, cronData.command);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(minutes, hours, dayOfMonth, month, dayOfWeek, command);
-    }
-
-    @Override
-    public String toString() {
-        return "CronData{" +
-                "minutes=" + minutes +
-                ", hours=" + hours +
-                ", daysOfMonth=" + dayOfMonth +
-                ", months=" + month +
-                ", daysOfWeek=" + dayOfWeek +
-                ", command='" + command + '\'' +
-                '}';
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(minutes, hours, dayOfMonth, month, dayOfWeek, command);
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "CronData{" +
+//                "minutes=" + minutes +
+//                ", hours=" + hours +
+//                ", daysOfMonth=" + dayOfMonth +
+//                ", months=" + month +
+//                ", daysOfWeek=" + dayOfWeek +
+//                ", command='" + command + '\'' +
+//                '}';
+//    }
 
     public String getMinutes() {
         return minutes;
