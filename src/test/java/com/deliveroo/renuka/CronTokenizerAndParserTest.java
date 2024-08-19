@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CronTokenizerAndParserTest {
@@ -446,20 +449,27 @@ class CronTokenizerAndParserTest {
 
     @Test
     void givenCronData_thenPrintCronData() {
-//        PrintStream defaultPrintStream = System.out;
-//        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-//        System.setOut(new PrintStream(outStream));
-//        CronData cronData = new CronData("0 15 30 45",
-//                "0",
-//                "1 15",
-//                "1 2 3 4 5 6 7 8 9 10 11 12",
-//                "1 2 3 4 5",
-//                "/usr/bin/find").print();
-//        System.setOut(defaultPrintStream);
-//        String actual = outStream.toString();
-//        assertEquals(expected, actual);
-
-        //todo
-
+        String expected = """ 
+                    minute        0 15 30 45
+                    hour          0
+                    day of month  1 15
+                    month         1 2 3 4 5 6 7 8 9 10 11 12
+                    day of week   1 2 3 4 5
+                    command       /usr/bin/find
+                    """;
+        PrintStream defaultPrintStream = System.out;
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outStream));
+        new CronData(
+                "0 15 30 45",
+                "0",
+                "1 15",
+                "1 2 3 4 5 6 7 8 9 10 11 12",
+                "1 2 3 4 5",
+                "/usr/bin/find"
+        ).print();
+        System.setOut(defaultPrintStream);
+        String actual = outStream.toString();
+        assertEquals(expected, actual);
     }
 }
