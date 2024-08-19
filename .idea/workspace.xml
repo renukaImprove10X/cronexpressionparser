@@ -1,23 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="refactoring">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/OnCronExceptionListener.java" afterDir="false" />
+    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="DI for multiple exceptions">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/CronTokenizerAndParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/exceptions/CronException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/ListRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/ListRegex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/RangeRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/RangeRegex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StarRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StarRegex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/FieldType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/FieldType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/deliveroo/renuka/CronTokenizerAndParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,66 +39,66 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.CronExpressionParserDemo.executor": "Run",
-    "Application.Main.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidExpression_whenMulitpleCommands_thenReturnsCorrectOutput.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidExpression_whentokenizeExpression_thenThrowCronException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseDayOfMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseDayOfWeek_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseMinutes_thenShouldThrowInvalidListExceptionWithMessageRangeOutOfBound.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidMinutesAndHours_whenParseExpression_thenThrowCumulativeExceptionMessages.executor": "Debug",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseDayOfMonth_thenShouldThrowInvalidRangeException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseDayOfWeek_thenShouldThrowInvalidRangeException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseHours_thenShouldThrowInvalidRangeException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseMinutes_thenShouldThrowInvalidRangeException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseMonth_thenShouldThrowInvalidRangeException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidStarSlashExpression_whenParseDayOfMonth_thenShouldThrowInvalidStepException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidStarSlashExpression_whenParseDayOfWeek_thenShouldThrowInvalidStepException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnSteppedMonths.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenInvalidTimerExpression_whenParseMinutes_thenShouldThrowInvalidTimerException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenListExpression_whenParseDayOfMonth_thenReturnSpecificDays.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenListExpression_whenParseDayOfWeek_thenReturnSpecificDays.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenListExpression_whenParseMinutes_thenReturnSpecificMinutes.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenMultipleRangeExpression_whenParseDayOfMonth_thenShouldThrowMultipleRangeException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenRangeExpression_whenParseDayOfWeek_thenReturnRangeOfDays.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfMonth_thenReturnSpecificDay.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfMonth_thenReturnSpecificMinute.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfWeek_thenReturnSpecificDay.executor": "Debug",
-    "JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfWeek_thenThrowsInvalidNumberException.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseMonth_thenReturnSpecificMonth.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenStarExpression_whenParseMinutes_thenReturnAllMinutes.executor": "Debug",
-    "JUnit.CronTokenizerAndParserTest.givenStarSlashExpression_whenParseDayOfMonth_thenReturnSteppedDays.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenStarSlashExpression_whenParseMinutes_thenReturnTimedMinutes.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenStepExpression_whenParseDayOfWeek_thenReturnSteppedDays.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseMinutes_thenShouldThrowInvalidRangeExceptionWithMessageTooManyRanges.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.parseExpression.executor": "Run",
-    "JUnit.CronTokenizerAndParserTest.tokenizeExpression.executor": "Run",
-    "JUnit.TokenizeAndParseTest.executor": "Run",
-    "JUnit.TokenizeAndParseTest.parseDayOfMonth.executor": "Run",
-    "JUnit.TokenizeAndParseTest.parseHours.executor": "Run",
-    "JUnit.TokenizeAndParseTest.parseMinutes.executor": "Run",
-    "JUnit.TokenizeAndParseTest.parseMonth.executor": "Run",
-    "JUnit.TokenizeAndParseTest.tokenizeExpression.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "/Users/apple/IdeaProjects/CronExpressionParser/src/main/java/com/deliveroo/renuka/exceptions",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.general"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CronExpressionParserDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidExpression_whenMulitpleCommands_thenReturnsCorrectOutput.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidExpression_whentokenizeExpression_thenThrowCronException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseDayOfMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseDayOfWeek_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseMinutes_thenShouldThrowInvalidListExceptionWithMessageRangeOutOfBound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidListExpression_whenParseMonth_thenShouldThrowInvalidListExceptionWithMessageInvalidListRange.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidMinutesAndHours_whenParseExpression_thenThrowCumulativeExceptionMessages.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseDayOfMonth_thenShouldThrowInvalidRangeException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseDayOfWeek_thenShouldThrowInvalidRangeException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseHours_thenShouldThrowInvalidRangeException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseMinutes_thenShouldThrowInvalidRangeException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidRangeExpression_whenParseMonth_thenShouldThrowInvalidRangeException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidStarSlashExpression_whenParseDayOfMonth_thenShouldThrowInvalidStepException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidStarSlashExpression_whenParseDayOfWeek_thenShouldThrowInvalidStepException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnSteppedMonths.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenInvalidTimerExpression_whenParseMinutes_thenShouldThrowInvalidTimerException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenListExpression_whenParseDayOfMonth_thenReturnSpecificDays.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenListExpression_whenParseDayOfWeek_thenReturnSpecificDays.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenListExpression_whenParseMinutes_thenReturnSpecificMinutes.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenMultipleRangeExpression_whenParseDayOfMonth_thenShouldThrowMultipleRangeException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenRangeExpression_whenParseDayOfWeek_thenReturnRangeOfDays.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfMonth_thenReturnSpecificDay.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfMonth_thenReturnSpecificMinute.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfWeek_thenReturnSpecificDay.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseDayOfWeek_thenThrowsInvalidNumberException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenSingleValueExpression_whenParseMonth_thenReturnSpecificMonth.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenStarExpression_whenParseMinutes_thenReturnAllMinutes.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenStarSlashExpression_whenParseDayOfMonth_thenReturnSteppedDays.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenStarSlashExpression_whenParseMinutes_thenReturnTimedMinutes.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenStepExpression_whenParseDayOfWeek_thenReturnSteppedDays.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseMinutes_thenShouldThrowInvalidRangeExceptionWithMessageTooManyRanges.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.parseExpression.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CronTokenizerAndParserTest.tokenizeExpression.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenizeAndParseTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenizeAndParseTest.parseDayOfMonth.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenizeAndParseTest.parseHours.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenizeAndParseTest.parseMinutes.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenizeAndParseTest.parseMonth.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TokenizeAndParseTest.tokenizeExpression.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/apple/IdeaProjects/CronExpressionParser/src/main/java/com/deliveroo/renuka/exceptions&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.deliveroo.renuka" />
@@ -208,8 +200,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CronTokenizerAndParserTest" />
-        <item itemvalue="JUnit.CronTokenizerAndParserTest.parseExpression" />
         <item itemvalue="Application.CronExpressionParserDemo" />
+        <item itemvalue="JUnit.CronTokenizerAndParserTest.parseExpression" />
         <item itemvalue="JUnit.CronTokenizerAndParserTest.givenTooManyRangesExpression_whenParseHours_thenShouldThrowCronExceptionWithMessageTooManyRanges" />
         <item itemvalue="JUnit.CronTokenizerAndParserTest.givenInvalidStepExpression_whenParseMonth_thenReturnThrowInvalidStepException" />
       </list>
@@ -248,13 +240,22 @@
       <option name="project" value="LOCAL" />
       <updated>1724013903738</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DI for multiple exceptions">
+      <option name="closed" value="true" />
+      <created>1724070101408</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1724070101408</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial architecture" />
     <MESSAGE value="refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
+    <MESSAGE value="DI for multiple exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="DI for multiple exceptions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -266,7 +267,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/NumberRegex.java</url>
-          <line>17</line>
+          <line>16</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -284,12 +285,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/Regex.java</url>
-          <line>29</line>
+          <line>27</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/parsers/TokenParser.java</url>
-          <line>20</line>
+          <line>17</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
