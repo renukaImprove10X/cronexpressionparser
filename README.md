@@ -1,4 +1,5 @@
 Cron Expression Parser
+
 This simple Java application will tokenize and pars a cron expression and print it in a tabular format.
 
 Prerequisites
@@ -16,7 +17,7 @@ Follow these steps to run the project on linux/macOS.
 1. Download the Project
    Download the project folder and navigate to project root folder "CronExpressionParser" in command prompt/terminal
 
-```cd CronExParser```
+`cd CronExParser`
 
 2. Build the Project using Maven. This will compile the source code and package it into a JAR file.
 
