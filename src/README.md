@@ -17,12 +17,15 @@ Follow these steps to run the project on linux/macOS.
    Download the project folder and navigate to project root folder "CronExpressionParser" in command prompt/terminal
 
 cd CronExParser
+
 2. Build the Project using Maven. This will compile the source code and package it into a JAR file.
 
 mvn clean package
+
 3. To run the project on Linux or macOS:
 
 java -cp target/CronExpressionParser-1.0-SNAPSHOT.jar com.deliveroo.renuka.CronExpressionParserDemo "*/15 0 1,15 * 1-5 /usr/bin/find"
+
 4. Example Output
    When you run the CronExpressionParserDemo class, you should see output similar to this:
 
