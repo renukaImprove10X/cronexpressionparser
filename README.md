@@ -9,6 +9,8 @@ Before running this project, ensure you have the following installed:
 * Apache Maven 3.6.0 or later
 * Configure mvn and java in PATH variables
 
+![Sequence Diagram](CronExpressionParserDemoSD.jpg)
+
 
 Getting Started :
 
