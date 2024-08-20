@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="default command line args">
-      <change beforePath="$PROJECT_DIR$/src/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="sequence diagram">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +114,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.deliveroo.renuka" />
@@ -301,7 +305,39 @@
       <option name="project" value="LOCAL" />
       <updated>1724167225433</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="default command line args">
+      <option name="closed" value="true" />
+      <created>1724167385027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1724167385027</updated>
+    </task>
+    <task id="LOCAL-00012" summary="readme file">
+      <option name="closed" value="true" />
+      <created>1724167503122</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1724167503122</updated>
+    </task>
+    <task id="LOCAL-00013" summary="readme file">
+      <option name="closed" value="true" />
+      <created>1724167636093</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1724167636093</updated>
+    </task>
+    <task id="LOCAL-00014" summary="sequence diagram">
+      <option name="closed" value="true" />
+      <created>1724167918139</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1724167918139</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -312,7 +348,9 @@
     <MESSAGE value="code coverage optimization" />
     <MESSAGE value="print tcs" />
     <MESSAGE value="default command line args" />
-    <option name="LAST_COMMIT_MESSAGE" value="default command line args" />
+    <MESSAGE value="readme file" />
+    <MESSAGE value="sequence diagram" />
+    <option name="LAST_COMMIT_MESSAGE" value="sequence diagram" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

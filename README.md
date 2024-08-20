@@ -1,18 +1,27 @@
-Cron Expression Parser
+**Cron Expression Parser**
 
 This simple Java application will tokenize and pars a cron expression and print it in a tabular format.
 
-Prerequisites
+**Prerequisites**
+
 Before running this project, ensure you have the following installed:
 
 * Java Development Kit (JDK) 17 or later
 * Apache Maven 3.6.0 or later
 * Configure mvn and java in PATH variables
 
+
+I have followed TDD approach during the development of CronExpression Parser.
+I've followed **SOLID**, **TDD, DRY, interfaces** and good engineering practices.
+
+I've used Factory, Observer and Iterator design patterns to name a few.
+
+****Sequence Diagram :****
+
 ![Sequence Diagram](CronExpressionParserDemoSD.jpg)
 
 
-Getting Started :
+**Getting Started :**
 
 Follow these steps to run the project on linux/macOS.
 
