@@ -1,6 +1,6 @@
 **Cron Expression Parser**
 
-This is a Java application that will tokenize and pars a cron expression and print it in a tabular format.
+This is a Java application that will tokenize and parse a cron expression and print it in a tabular format.
 
 **Prerequisites**
 
