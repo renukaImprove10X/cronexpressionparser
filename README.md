@@ -14,7 +14,7 @@ Before running this project, ensure you have the following installed:
 I have followed TDD approach during the development of CronExpression Parser.
 I've followed **SOLID**, **TDD, DRY, interfaces** and good engineering practices.
 
-I've used Factory, Observer and Iterator design patterns to name a few.
+I've used Factory, Observer and Iterator design patterns to name a few. I have achieved a 80% **code coverage** overall and 100% **code coverage** in couple of classes.
 
 ****Sequence Diagram :****
 
