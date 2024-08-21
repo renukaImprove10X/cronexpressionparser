@@ -19,15 +19,3 @@ public enum FieldType{
         this.end = end;
     }
 }
-
-// packaging
-// use start and end in range
-// utils
-// put all instance variables as private
-// new modifications
-// bifurcate pattern and fields
-
-
-// Divide Prser and tokenizer
-//
-
