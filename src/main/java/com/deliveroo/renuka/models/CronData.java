@@ -21,25 +21,6 @@ public class CronData {
     private List<Integer> monthList;
     private List<Integer> dayOfWeekList;
 
-    public List<Integer> getMinutesList() {
-        return minutesList;
-    }
-
-    public List<Integer> getHoursList() {
-        return hoursList;
-    }
-
-    public List<Integer> getDayOfMonthList() {
-        return dayOfMonthList;
-    }
-
-    public List<Integer> getMonthList() {
-        return monthList;
-    }
-
-    public List<Integer> getDayOfWeekList() {
-        return dayOfWeekList;
-    }
 
     public CronData(String minutes, String hours, String dayOfMonth, String month, String dayOfWeek, String command) {
         this.minutes = minutes;
@@ -98,6 +79,26 @@ public class CronData {
 
     public String getCommand() {
         return command;
+    }
+
+    public List<Integer> getMinutesList() {
+        return minutesList;
+    }
+
+    public List<Integer> getHoursList() {
+        return hoursList;
+    }
+
+    public List<Integer> getDayOfMonthList() {
+        return dayOfMonthList;
+    }
+
+    public List<Integer> getMonthList() {
+        return monthList;
+    }
+
+    public List<Integer> getDayOfWeekList() {
+        return dayOfWeekList;
     }
 
     public void print() {
