@@ -1,10 +1,13 @@
 package com.deliveroo.renuka.models;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static com.deliveroo.renuka.parsers.FieldType.*;
 
-public class CronData{
+public class CronData {
     private String minutes;
     private String hours;
     private String dayOfMonth;
@@ -12,7 +15,33 @@ public class CronData{
     private String dayOfWeek;
     private String command;
 
-    public CronData(String minutes, String hours, String dayOfMonth, String month, String dayOfWeek, String command){
+    private List<Integer> minutesList;
+    private List<Integer> hoursList;
+    private List<Integer> dayOfMonthList;
+    private List<Integer> monthList;
+    private List<Integer> dayOfWeekList;
+
+    public List<Integer> getMinutesList() {
+        return minutesList;
+    }
+
+    public List<Integer> getHoursList() {
+        return hoursList;
+    }
+
+    public List<Integer> getDayOfMonthList() {
+        return dayOfMonthList;
+    }
+
+    public List<Integer> getMonthList() {
+        return monthList;
+    }
+
+    public List<Integer> getDayOfWeekList() {
+        return dayOfWeekList;
+    }
+
+    public CronData(String minutes, String hours, String dayOfMonth, String month, String dayOfWeek, String command) {
         this.minutes = minutes;
         this.hours = hours;
         this.dayOfMonth = dayOfMonth;
@@ -78,6 +107,15 @@ public class CronData{
         System.out.printf("%-14s%s\n", MONTH.label, month);
         System.out.printf("%-14s%s\n", DAY_OF_WEEK.label, dayOfWeek);
         System.out.printf("%-14s%s\n", COMMAND.label, command);
+    }
+
+    // call this only on expanded cron
+    public void getExpandedCronList(){
+        this.minutesList = Arrays.stream(this.minutes.split(" ")).map(Integer::parseInt).toList();
+        this.hoursList = Arrays.stream(this.hours.split(" ")).map(Integer::parseInt).toList();
+        this.dayOfMonthList = Arrays.stream(this.dayOfMonth.split(" ")).map(Integer::parseInt).toList();
+        this.monthList = Arrays.stream(this.month.split(" ")).map(Integer::parseInt).toList();
+        this.dayOfWeekList = Arrays.stream(this.dayOfWeek.split(" ")).map(Integer::parseInt).toList();
     }
 
 }

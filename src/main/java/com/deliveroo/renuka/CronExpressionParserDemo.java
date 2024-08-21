@@ -9,7 +9,6 @@ public class CronExpressionParserDemo {
         if (args.length > 0) {
             cronExp = args[0];
         }
-//        cronTokenizerAndParser.cronExpression = "*/15 1 1,15 * 1-5 /usr/bin/find";
         cronTokenizerAndParser.cronExpression = cronExp;
         try {
             cronTokenizerAndParser.tokenizeExpression();
@@ -18,5 +17,20 @@ public class CronExpressionParserDemo {
             System.err.println(e.getMessage());
         }
     }
-
 }
+
+
+
+
+
+
+
+
+//        cronTokenizerAndParser.cronExpression = "*/15 1 1,15 * 1-5 /usr/bin/find";
+
+//            cronTokenizerAndParser.expandedCronData.getExpandedCronList();
+//            System.out.println(cronTokenizerAndParser.expandedCronData.getMinutesList());
+//            System.out.println(cronTokenizerAndParser.expandedCronData.getHoursList());
+//            System.out.println(cronTokenizerAndParser.expandedCronData.getDayOfMonthList());
+//            System.out.println(cronTokenizerAndParser.expandedCronData.getMonthList());
+//            System.out.println(cronTokenizerAndParser.expandedCronData.getDayOfWeekList());
