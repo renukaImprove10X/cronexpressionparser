@@ -7,9 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="sequence diagram">
+    <list default="true" id="1d030fb6-1a5c-4308-9a35-9db90388a27a" name="Changes" comment="updated readme doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/deliveroo/renuka/matchers/StepRegex.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +93,7 @@
     "JUnit.TokenizeAndParseTest.parseMonth.executor": "Run",
     "JUnit.TokenizeAndParseTest.tokenizeExpression.executor": "Run",
     "JUnit.com.deliveroo.renuka in CronExpressionParser.executor": "Run",
+    "JUnit.com.deliveroo.renuka.* and 5 more.executor": "Coverage",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "SONARLINT_PRECOMMIT_ANALYSIS": "true",
@@ -131,7 +132,7 @@
       <recent name="com.deliveroo.renuka" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CronExpressionParserDemo">
+  <component name="RunManager" selected="JUnit.com.deliveroo.renuka.* and 5 more">
     <configuration name="CronExpressionParserDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.deliveroo.renuka.CronExpressionParserDemo" />
       <module name="CronExpressionParser" />
@@ -176,22 +177,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CronTokenizerAndParserTest.givenInvalidSingleValueExpression_whenParseDOM_thenReturnSpecificMonth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CronExpressionParser" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.deliveroo.renuka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.deliveroo.renuka" />
-      <option name="MAIN_CLASS_NAME" value="com.deliveroo.renuka.CronTokenizerAndParserTest" />
-      <option name="METHOD_NAME" value="givenInvalidSingleValueExpression_whenParseDOM_thenReturnSpecificMonth" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="com.deliveroo.renuka in CronExpressionParser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CronExpressionParser" />
       <extension name="coverage">
@@ -206,13 +191,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.deliveroo.renuka.* and 5 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CronExpressionParser" />
+      <option name="TEST_OBJECT" value="pattern" />
+      <patterns>
+        <pattern testClass="com.deliveroo.renuka.*" />
+        <pattern testClass="com.deliveroo.renuka.exceptions.*" />
+        <pattern testClass="com.deliveroo.renuka.matchers.*" />
+        <pattern testClass="com.deliveroo.renuka.models.*" />
+        <pattern testClass="com.deliveroo.renuka.parsers.*" />
+        <pattern testClass="com.deliveroo.renuka.utils.*" />
+      </patterns>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.com.deliveroo.renuka.* and 5 more" />
         <item itemvalue="Application.CronExpressionParserDemo" />
         <item itemvalue="JUnit.CronTokenizerAndParserTest" />
         <item itemvalue="JUnit.com.deliveroo.renuka in CronExpressionParser" />
         <item itemvalue="JUnit.CronTokenizerAndParserTest.givenCronData_thenPrintCronData" />
-        <item itemvalue="JUnit.CronTokenizerAndParserTest.givenInvalidSingleValueExpression_whenParseDOM_thenReturnSpecificMonth" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +337,23 @@
       <option name="project" value="LOCAL" />
       <updated>1724167918139</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated readme doc">
+      <option name="closed" value="true" />
+      <created>1724168858001</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1724168858001</updated>
+    </task>
+    <task id="LOCAL-00016" summary="updated readme doc">
+      <option name="closed" value="true" />
+      <created>1724169093356</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1724169093356</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -350,7 +366,8 @@
     <MESSAGE value="default command line args" />
     <MESSAGE value="readme file" />
     <MESSAGE value="sequence diagram" />
-    <option name="LAST_COMMIT_MESSAGE" value="sequence diagram" />
+    <MESSAGE value="updated readme doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated readme doc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -397,6 +414,7 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CronExpressionParser$com_deliveroo_renuka___and_5_more.ic" NAME="com.deliveroo.renuka.* and 5 more Coverage Results" MODIFIED="1724221507560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
     <SUITE FILE_PATH="coverage/CronExpressionParser$CronTokenizerAndParserTest.ic" NAME="CronTokenizerAndParserTest Coverage Results" MODIFIED="1724096141024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>com.deliveroo.renuka.parsers.*</FILTER>
     </SUITE>

@@ -36,7 +36,7 @@ public class StepRegex extends Regex {
     @Override
     public Map<FieldType, Rules> getFieldRules() {
         return Map.of(
-                FieldType.MINUTE, new Rules("^\\*/([1-5]?[1-9])$", FieldType.MINUTE, INVALID_STEP),
+                FieldType.MINUTE, new Rules("^\\*/([1-5]?[0-9])$", FieldType.MINUTE, INVALID_STEP),
                 FieldType.HOUR, new Rules("^\\*/([1-9]|1[0-9]|2[0-3])$", FieldType.HOUR, INVALID_STEP),
                 FieldType.DAY_OF_MONTH, new Rules("^\\*/([1-9]|[12][0-9]|3[0-1])$", FieldType.DAY_OF_MONTH, INVALID_STEP),
                 FieldType.MONTH, new Rules("^\\*/([1-9]|1[0-2])$", FieldType.MONTH, INVALID_STEP),
